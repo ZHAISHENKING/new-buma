@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{margin:0;padding:0}
+			#box{position:relative;
+				width:1000px;min-height:500px;
+				}
+		</style>
+	</head>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		//瀑布流；
+		function WaterFall(obj){
+			this.boxId = obj.boxId;
+			this.imgs = obj.imgs;//所有图片路径的数组
+			this.imgWidth = obj.imgWidth;
+			//每个图片的高度，计算出来
+			this.cols = 0;//每行放的图片个数（列数）//需要计算的
+			this.initUI();
+		}
+		
+		WaterFall.prototype.initUI=function(){
+	
+			for(let i=0;i<this.imgs.length;i++){
+				//1、创建img标记，
+				let imgObj = $("<img src='"+this.imgs[i]+"'/>");
+				//2、放到box里；
+				imgObj.css({"position":"absolute","left":"-1000px","top":"-1000px","width":this.imgWidth}); 
+				//2)、append();
+				$(this.boxId).append(imgObj);		
+			}
+		}
+		
+		WaterFall.prototype.setLeftTop=function(){
+			//1.1)、求每一列高度的最小值的列号（列的下标）
+				let colCount = parseInt($(this.boxId).width()/this.imgWidth)//几列
+				let colHeights=new Array(colCount);//每列图片高度
+				let minIndex = getMinIndex(colHeights);
+				for(let i=0;i<colHeights.length;i++){
+					colHeights[i]=0;
+				}
+				for(let i=0;i<this.imgs.length;i++){
+				//1）、先计算img的定位（left和top）
+				//1.1)、求每一列高度的最小值的列号（列的下标）
+				let minIndex = getMinIndex(colHeights);
+				//1.2）、计算left和top。
+			    let left = minIndex*this.imgWidth;//最小列的下标乘以每个图片的宽度	
+				let top = colHeights[minIndex];//根据最小列下标获得最小列的高度。
+				let imgObj = $(this.boxId+" img:eq("+i+")");
+				
+				imgObj.css({"left":left+"px","top":top+"px"});// 
+				console.log(imgObj.height());
+				//3)、改变当前列的高度
+				colHeights[minIndex] = colHeights[minIndex]+imgObj.height();
+			}
+		}
+		//200,250,0,0,0,
+		function getMinIndex(arr){
+			let minIndex = 0;//2
+			for(let i=1;i<arr.length;i++){
+				if(arr[i]<arr[minIndex]){
+					minIndex = i;
+				}
+			}
+			return minIndex;
+		}
+	
+	$(function(){
+		let w=new WaterFall({
+			boxId :"#box",
+			imgs : ["../img/3.png","../img/3.png","../img/3.png",
+			"../img/3.png","../img/3.png","../img/3.png",
+			"../img/3.png","../img/3.png","../img/3.png","../img/3.png",
+			"../img/3.png","../img/3.png"],//所有图片路径的数组
+			imgWidth : 220,
+		})
+		let timer = setInterval(function(){
+				let hasZero = false;//假设没有0。；
+				$("#box img").each(function(){
+					if($(this).height()==0){
+						hasZero = true;
+					}
+				});
+				
+				if(!hasZero){
+					w.setLeftTop();
+					clearInterval(timer);
+				}
+				
+			},10);
+	})
+	</script>
+	<body>
+		<div id="box">
+			
+		</div>
+		
+	</body>
+</html>

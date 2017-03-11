@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding:0;margin:0}
+			ul,li{list-style: none;}
+			#box{width:500px;height:600px;
+				position:relative;
+				margin:100px auto;
+				background:bisque;
+				}
+			li{width:500px;height:60px;
+				
+				}
+			.me p{
+				float:right;
+				margin-right:20px;
+				margin-top:10px;
+			}
+			.service p{
+				float:left;
+				margin-left:20px;
+				margin-top:10px;
+			}
+			.me div{
+				margin:20px 0 0 60px;
+				float:right;
+				background:cornflowerblue;
+				min-height:30px;
+				width:100px;
+				border-radius: 5px;
+			}
+			.service div{
+				margin:20px 0 0 0;
+				float:left;
+				background:cornflowerblue;
+				min-height:30px;
+				min-width:100px;
+				max-width:250px;
+				border-radius: 5px;
+			}
+			p{display: inline-block;}
+			.head{width:500px;height:50px;
+				background:dodgerblue;
+				color:#fff;
+				font-size:30px;line-height:50px;
+				text-align: center;}
+			textarea{width:490px;height:100px;
+					border:solid 1px black;
+					margin-left:2px;
+					position: absolute;
+					bottom:10px;}
+			.send{position:absolute;
+				bottom:30px;right:20px;
+				width:40px;height:25px;
+				border-radius:3px;
+				color:#fff;
+				background:dodgerblue;
+				}	
+			ul{width:500px;height:430px;
+				position: absolute;
+				top:50px;}
+			img{width:30px;height:30px;border-radius: 50%;}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="head">buma</div>
+			<ul></ul>
+			<textarea></textarea>
+			<div class="send">发送</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$(".send").click(function(){
+		var text=$("textarea").val();
+		if(text){
+			$("ul").append("<li class='me'><p><img src='../img/img/2.jpg'></p><div>"+text+"</div></li>");
+		$("textarea").val("");
+			setTimeout(function(){
+					$.getJSON("../json/智能问答.json",function(data){
+					console.log();
+					if(text==data[0].Q){
+						$("ul").append("<li class='service'><p><img src='../img/img/3.jpg'></p><div>"+data[0].A+"</div></li>");
+					}else if(text==data[1].Q){
+						$("ul").append("<li class='service'><p><img src='../img/img/3.jpg'></p><div>"+data[1].A+"</div></li>");
+					}else{
+						$("ul").append("<li class='service'><p><img src='../img/img/3.jpg'></p><div>"+data[2].A+"</div></li>");
+					}
+				})
+			},1000)
+		
+		}
+		
+	})
+</script>

@@ -1,0 +1,73 @@
+.listbox {
+  width: 70%;
+  overflow: hidden;
+  float: right; }
+  .listbox li {
+    float: left;
+    width: 220px;
+    height: 300px;
+    position: relative; }
+    .listbox li .bg-black {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      background: red;
+      color: #fff; }
+
+.hr-1 {
+  margin-bottom: 45px;
+  width: 100%;
+  float: right;
+  height: 0px;
+  border: double 3px black; }
+
+.hot-box {
+  width: 30%;
+  overflow: hidden;
+  float: left; }
+  .hot-box p {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 10px;
+    margin-bottom: 20px; }
+    .hot-box p span {
+      display: inline-block;
+      color: red;
+      float: right;
+      font-size: 16px; }
+      .hot-box p span i {
+        font-size: 32px;
+        color: black; }
+  .hot-box .oul li {
+    font-size: 14px;
+    padding-left: 30px;
+    width: 50%;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    border-bottom: solid 1px gray; }
+    .hot-box .oul li span {
+      display: inline-block;
+      color: red;
+      float: right; }
+  .hot-box #love {
+    display: inline-block;
+    width: 120px;
+    font-size: 16px;
+    height: 50px;
+    background: #ACACAC;
+    color: #F0F0F0;
+    text-align: center;
+    line-height: 50px;
+    margin: 20px 35%; }
+
+.hot-box .listbox {
+  width: 100%;
+  overflow: hidden;
+  padding-left: 20%; }
+
+/*# sourceMappingURL=hotgoods.css.map */

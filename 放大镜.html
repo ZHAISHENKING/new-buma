@@ -3,16 +3,130 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		
+				<style>
+			*{padding:0;margin:0;}
+			ul,li{list-style:none;}
+			
+			#wrap span:hover{color:red;}
+			#wrap{width:452px;height:583px;margin:30px 20px 0 100px;float:left;}
+			.top,.box{width:452px;height:452px;margin-bottom:20px;
+					border:solid 1px gray;
+					}
+			.box{position:relative;}
+			.top img{width:100%;height:100%;}
+			.bigPic{width:452px;height:452px;
+					margin-top:30px;
+					border:solid 1px gray;
+					float:left;display:none;
+					position:relative;	
+					overflow: hidden;
+					margin-left: 50px;}
+			.bigPic img{position:absolute;left:0;top:0;width:904px;height:904px;z-index:999}
+			.sp-list{margin-bottom:18px;
+					position:relative;
+					padding-left:30px;}
+			.prev,.next{display:block;
+						width:22px;
+						height:33px;
+						float:left;
+						position:absolute;
+						cursor:pointer;
+						top:50%;
+						margin-top:-16px;
+						font-size:30px;
+						text-align:center;
+						line-height:33px;
+						color:black;
+						}
+			.prev{left:0}
+			.next{right:0}
+			.foot{width:380px;height:58px;overflow:hidden;
+				position:relative;}
+			#list li{float:left;width:59px;height:59px;
+					margin:0 9px;}
+			.foot li img{vertical:middle;
+					width:54px;height:54px;}
+			#list{position:absolute;
+			width:500px;height:58px;
+			top:0px;left:0px;
+			float:left;}
+			/*li:hover{border:solid 1px red;}*/
+			.pop{width:226px;height:226px;
+				position:absolute;
+				left:0;top:0;
+				cursor:move;
+				background:rgba(0,0,0,.4);
+				display:none;
+				}
+			.size span{display:inline-block;width:30px;height:30px;background:lightgray;color:#000;margin-right:10px;line-height:30px;text-align: center;}	
+		.wrap-right{position:absolute; top:150px;right:25%;width:30%;overflow:hidden;}
+			#txt{text-align:center;
+				width:40px;height:50px;
+				line-height:50px;
+				font-size:14px;
+				font-weight:bold;}
+			#plus{width:30px;height:25px;}
+			#minus{width:30px;height:25px;}
+			.btn {text-align: center;
+                       margin-top:20px;
+                        display:block;
+                        border-radius: 0;
+                        color: #fff;
+                        height: 35px;
+                        line-height: 35px;
+                        padding: 0 15px;
+                        font-size: 12px;
+                        letter-spacing: 0.5px;
+                        background:red;
+                        width:120px;
+                   }
+                   
+         .listbox{
+    padding-left:130px;
+    width:30%;
+    overflow: hidden;
+    float:right;
+    li{float:left;
+    width:220px;
+    height:300px;
+    position:relative;
+    .bg-black{
+        position:absolute;
+        display: block;
+        top:0;left:0;
+        background:red;
+        color:#fff;
+    }
+    }
+}
+#sbox{
+	float:right;
+	width:30%;
+	height:50px;padding-right:115px;
+	margin-top:30px;
+	margin-bottom: -50px;
+}
+ #love{float:right;
+        display:inline-block;
+        width:120px;
+        font-size:16px;
+        height:50px;
+        background:#ACACAC;
+        color:#F0F0F0;
+        text-align: center;
+        line-height:50px;
+        
+    }
+		</style>
 		<link rel="stylesheet" href="css/universal.css" />
-		
+		<!--<link rel="stylesheet" type="text/css" href="css/hotgoods.css"/>-->
 		<link rel="stylesheet" type="text/css" href="css/buma.css"/>
 	</head>
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="js/banner-auto.js"></script>
 	<script type="text/javascript" src="js/scrollTit.js"></script>
 	<body>
-		<div class="header buma-header">
+<div class="header buma-header">
 			<div class="header-zhuce">
 				<ul class="buma-menu">
 					<li class="menu-1"><a href="###">订阅电子邮件</a></li>
@@ -30,7 +144,7 @@
 							<a href="/" class="homes-icon homes"></a>
 						</div>
 						<li class="menu-list">
-							<a href="hotgoods.html" class="small-a">男子</a>
+							<a href="#" class="small-a">男子</a>
 							<div class="nav-text">
 									<div class="nav-wrap">
 										<ul class="wrap">
@@ -229,7 +343,7 @@
 							</div>
 						</li>
 						<li class="menu-list">
-							<a href="hotgoods.html" class="small-a">女子</a>
+							<a href="#" class="small-a">女子</a>
 							<div class="nav-text">
 									<div class="nav-wrap">
 										<ul class="wrap">
@@ -400,7 +514,7 @@
 							</div>
 						</li>
 						<li class="menu-list">
-							<a href="hotgoods.html" class="small-a">儿童</a>
+							<a href="#" class="small-a">儿童</a>
 							<div class="nav-text">
 									<div class="nav-wrap">
 										<ul class="wrap">
@@ -468,7 +582,7 @@
 							</div>
 						</li>
 						<li class="menu-list">
-							<a href="hotgoods.html" class="small-a">运动</a>
+							<a href="#" class="small-a">运动</a>
 							<div class="nav-img">
 									<div class="nav-wrap">
 										<ul class="wrap1">
@@ -594,7 +708,7 @@
 							</div>
 						</li>
 						<li class="menu-list">
-							<a href="hotgoods.html" class="small-a">系列</a>
+							<a href="#" class="small-a">系列</a>
 							<div class="nav-img">
 									<div class="nav-wrap">
 										<ul class="wrap1">
@@ -630,7 +744,7 @@
 							</div>
 						</li>
 						<li class="menu-last">
-							<a href="hotgoods.html" class="small-a">SELECT</a>
+							<a href="#" class="small-a">SELECT</a>
 							<div class="nav-img">
 									<div class="nav-wrap">
 										<ul class="wrap3">
@@ -767,376 +881,118 @@
 				</div>
 
 			</div>
-			<div class="buma-banner">
+			
+	
+			
 				
-				<div id="play">
-					<ul id="ul"> 
-						
-				        <li>
-				        	<div class="play-libox">
-					        	<img src="img/0.jpg" alt="">
-					        	<div class="btns">
-									<a href="/daily_paper" class="btn " style="bottom:33%;left:400px;">立即选购<i></i></a>
-								</div>
-							</div>
-				        </li> 
-				        <li>
-				        	<div class="play-libox">
-					        	<img src="img/1.jpg" alt="">
-					        	<div class="btns">
-									<a href="/daily_paper" class="btn " style="bottom:38%;left:47%;">了解更多<i></i></a>
-								</div>
-							</div>
-				        </li> 
-				        <li>
-				        	<div class="play-libox">
-					        	<img src="img/2.jpg" alt="">
-					        	<div class="btns">
-									<a href="/daily_paper" class="btn " style="top:35%;left:150px;">立即选购<i></i></a>
-								</div>
-							</div>
-				        </li> 
-				        <li>
-				        	<div class="play-libox">
-					        	<img src="img/3.jpg" alt="">
-					        	<div class="btns">
-									<a href="/daily_paper" class="btn " style="top:50%;left:80px;">立即选购<i></i></a>
-								</div>
-							</div>
-				        </li> 
-				        <li>
-				        	<div class="play-libox">
-				        		<img src="img/4.jpg" alt="">
-					        	<div class="row" style="left:100px;">
-									<h2 class="none-text" style="color:#000">PUMA X</h2>
-									<h2 class="none-text" style="color:#000">DAILY</h2>
-									<h2 class="none-text" style="color:#000">PAPER</h2>
-									<h5 class="subheadline" style="color:#000">当肯尼亚遇上阿姆斯特丹</h5>
-								<div class="btns">
-											<a href="/daily_paper" class="btn ">立即选购<i></i></a>
-								</div>
-								</div>
-				        	</div>
-				        	
-				        </li>
-				        <li>
-				        	
-				       		 <div class="play-libox">
-				        		<img src="img/5.jpg" alt="">
-					        	<div class="row"style="right:100px;">
-									<h2 class="none-text" style="color:#fff">PUMA X</h2>
-									<h2 class="none-text" style="color:#fff">TRAPSTAR</h2>
-									<h5 class="subheadline" style="color:#fff">重新定义街头潮流风范</h5>
-									<div class="btns">
-										<a href="/trapstar" class="btn">立即选购<i></i></a>
-									</div>
-								</div>
-				        	</div>
-				        
-				        </li> 
-				        <li>
-				        	<div class="play-libox">
-					        	<img src="img/0.jpg" alt="">
-					        	<div class="btns">
-									<a href="/daily_paper" class="btn " style="bottom:33%;left:400px;">立即选购<i></i></a>
-								</div>
-							</div>
-				        </li> 
-    				</ul> 
-				    <button id="prev">&lt;</button> 
-				    <button id="next">&gt;</button>
-				</div>
-				<ol id="ol"> 
-				        <li class="bg"></li>     
-				        <li></li>    
-				        <li></li>    
-				        <li></li>
-				        <li></li>    
-				        <li></li> 
-				</ol> 
-			</div>
-		</div>
-		    <!--中间动画广告-->
-	<div class="cont-image">
-		<div class="flash">
-			<img src="img/flash.gif">
-		</div>
-	</div>	
 		
-	<div>	
-		<div class="video">
-			<div class="v-title">
-				<h1>观看 BUMA 视频</h1>
-				<h2>看看 BUMA 正在发生的片段</h2>
-			</div>
-			<div class="v-content">
-				<div class="v-fleft">
-					<div class="iframe">
-						<a class="video_button"></a>
-						<img class="video-imges" src="img/v6.jpg"/>
-					</div>
-				</div>
-				<div class="imgs-all">
-					<div class="over">
-						<div id="imgsAllBox">
-							<img src="img/s1.jpg" class="img-aside"/>
-							<img src="img/s2.jpg" class="img-aside"/>
-							<img src="img/s3.jpg" class="img-aside"/>
-							<img src="img/s4.jpg" class="img-aside"/>
-							<img src="img/s5.jpg" class="img-aside"/>
-							<img src="img/s6.jpg" class="img-aside"/>
-							<img src="img/v7.jpg" class="img-aside"/>
-							<img src="img/v8.jpg" class="img-aside"/>
-						</div>
-					</div>
-					<!--图片滚动条部分-->
-					<!--<div class="asideScoll">
-						<a href="#" style="display:block" class="scollUp"></a>
-						<div class="asideScollBox">
-							<div class="scollChild">
-								<div class="scollBarChild"></div>
-							</div>
-							<div class=""></div>
-						</div>
-						<a href="#" style="display:block" class="scollDown"></a>
-					</div>-->
-				</div>
-			</div>
-		</div>
-		<!--视频end-->
+		</div>	
 		
-		<!--热门商品-->
-		<div class="main">
-			<h1 class="main-tit">当季热卖</h1>
-			<div class="mainBox">
-				<div class="cell1">	
-					<div class="photo">
-						<a href="/bolt" class="small-photo"><img src="img/goods (3).jpg"/></a>
-					</div>
-					<h6>BUMA X USAIN BOLT</h6>
-					<a href="/bolt" class="small-atext">立即选购</a>
+<div id="wrap">
+			<div class="box">
+				<div class="top">
+					<img src="img/1.jpg"/>
 				</div>
-				<div class="cell1">	
-					<div class="photo">
-						<a href="/bolt" class="small-photo"><img src="img/goods (2).jpg"/></a>
-					</div>
-					<h6>CLYDE立体透视</h6>
-					<a href="/bolt" class="small-atext">立即选购</a>
-				</div>
-				<div class="cell1">	
-					<div class="photo">
-						<a href="/bolt" class="small-photo"><img src="img/goods (1).jpg"/></a>
-					</div>
-					<h6>Clyde插画联名</h6>
-					<a href="/bolt" class="small-atext">立即选购</a>
-				</div>
-			</div>
-		</div>
-		<!--当季热卖-->
-		<!--当季热卖-->
-		<!--我是分割线-->
-		<div class="main">
-			<h1 class="main-tit"></h1>
-			<div class="mainBox">
-				<div class="cell1">	
-					<div class="photo">
-						<a href="/bolt" class="small-photo"><img src="img/goods (5).jpg"/></a>
-					</div>
-					<h6>Clyde Premium</h6>
-					<a href="/bolt" class="small-atext">立即选购</a>
-				</div>
-				<div class="cell1">	
-					<div class="photo">
-						<a href="/bolt" class="small-photo"><img src="img/goods (4).jpg"/></a>
-					</div>
-					<h6>B.O.G Limitless Hi evoKNIT</h6>
-					<a href="/bolt" class="small-atext">立即选购</a>
-				</div>
-				<div class="cell1">	
-					<div class="photo">
-						<a href="/bolt" class="small-photo"><img src="img/goods (6).jpg"/></a>
-					</div>
-					<h6>时装周上的Mostro</h6>
-					<a href="/bolt" class="small-atext">立即选购</a>
-				</div>
-			</div>
-		</div>
-		<!--新品上市-->
-		<!--新品上市-->
-		<!--我是分割线-->
-		<div class="newGoods">
-			<h1 class="goodsTit">新品上市</h1>
-			<div class="buyShopping">
-				<div class="good-btn">
-						<a class="next">
-							<i></i>
-						</a>
-						<a class="prev">
-							<i></i>
-						</a>
-				</div>
-				<div class="goodsBox">
-					<ul>
-						<li><a href=""><h4>BUMA X STAMPD</h4><img src="img/new (1).jpg"/></a></li>
-						<li><a href=""><h4>BUMA X UEG</h4><img src="img/new (2).jpg"/></a></li>
-						<li><a href=""><h4>IGNITE evoKNIT</h4><img src="img/new (3).jpg"/></a></li>
-						<li><a href=""><h4>IGNITE evoKNIT</h4><img src="img/new (4).jpg"/></a></li>
+				<div class="pop"></div>
+			</div>	
+				
+				
+				
+				<div class="sp-list">
+				<span class="prev">&lt;</span>
+				<span  class="next">&gt;</span>
+			
+				<div class="foot">
+					<ul id="list">
+						<li class="active"><img src="img/0.jpg"/></li>
+						<li><img src="img/1.jpg"/></li>
+						<li><img src="img/2.jpg"/></li>
+						<li><img src="img/3.jpg"/></li>
+						<li><img src="img/4.jpg"/></li>
+						<li><img src="img/5.jpg"/></li>
 					</ul>
+				</div>
+				
+				
+			</div>
+		
+	</div>
+		<div class="bigPic">
+			<img src="img/1.jpg" />
+		</div>
+		
+	<!--右半部分-->
+	<div class="wrap-right">
+		<div class="wrapBox">
+			<h2 style="font-weight: bold;">IMAGE BUMA X<br/>男子短裤</h2>
+			<p style="font-weight: bold;font-size:26px;">￥399.00</p>
+		</div>
+		<div class="size">
+			<span>S</span><span>M</span><span>L</span><span>XL</span>
+		</div>
+		<span style="display:block;margin-top:10px;font-size:16px">数量</span><br/>
+		<input type="button" value="-" id="minus"disabled=true/>
+		<input type="text" value="1" id="txt"/>
+		<input type="button" value="+" id="plus"/>
+		<span class="btn">加入购物车</span>
+	</div>
+	<div id="sbox">
+		<span id="love">
+				猜你喜欢
+			</span>
+	</div>
+			
+			<div class="listbox">
+			<ul>
+				
+			
+		<!--goods1-->
+				<li>
 					
-				</div>
-			</div>
-		</div>
-		<!--热卖推荐-->
-		<!--热卖推荐-->
-		<!--我是分割线-->
-		<div class="hot">
-			<h1 class="hot-tit">热卖推荐</h1>
-			<div class="list">
-				<div class="good-btn">
-						<a class="next">
-							<i></i>
-						</a>
-						<a class="prev">
-							<i></i>
-						</a>
-				</div>
-				<div class="listBox">
-					<ul>
-				<!--goods1-->
-						<li>
-							<a href="">
-							<img src="img/shoes.png"/>
-							</a>
-							<div class="list-name">
-								Pulse IGNITE XT Swan 女子训练鞋
-							</div>
-							<div>
-								<span>￥739.00</span>
-							</div>
-						</li>
-				<!--goods2-->
-						<li>
-							<a href="">
-							<img src="img/Hshoes.png"/>
-							</a>
-							<div class="list-name">
-								BUMA IGNITE Limitless <br/>
-								Extreme Hi-Tech 男女同款跑步鞋
-							</div>
-							<div>
-								<span>￥1169.00</span>
-							</div>
-						</li>
-				<!--goods3-->
-						<li>
-							<a href="">
-							<img src="img/3.png"/>
-							</a>
-							<div class="list-name">
-								Explosive Jacket 女子 梭织外套
-							</div>
-							<div>
-								<span>￥749.00</span>
-							</div>
-						</li>
-				<!--goods4-->
-						<li>
-							<a href="">
-							<img src="img/4.png"/>
-							</a>
-							<div class="list-name">
-								Evo Core FZ Hoody 男子 针织外套
-							</div>
-							<div>
-								<span>￥549.00</span>
-							</div>
-						</li>
-				<!--goods5-->
-						<li>
-							<a href="">
-							<img src="img/6.png"/>
-							</a>
-							<div class="list-name">
-								Evo Core Sweat Pants 男子 针织长裤
-							</div>
-							<div>
-								<span>￥449.00</span>
-							</div>
-						</li>
-				<!--goods6-->
-						<li>
-							<a href="">
-							<img src="img/7.png"/>
-							</a>
-							<div class="list-name">
-								CLASH 女子紧身裤 
-							</div>
-							<div>
-								<span>￥499.00</span>
-							</div>
-						</li>
-				<!--goods7-->
-						<li>
-							<a href="">
-							<img src="img/8.png"/>
-							</a>
-							<div class="list-name">
-								Prime Street Swan 女子双肩包
-							</div>
-							<div>
-								<span>￥299.00</span>
-							</div>
-						</li>
-				<!--goods8-->
-						<li>
-							<a href="">
-							<img src="img/9.png"/>
-							</a>
-							<div class="list-name">
-								BUMA EVOLUTION SB 男女款 帽子
-							</div>
-							<div>
-								<span>￥199.00</span>
-							</div>
-						</li>
-						
-
-					</ul>
-				</div>	
-			</div>
-		</div>
-		<!--hot产品end-->
-		<!--清仓-->
-		<!--清仓-->
-		<!--我是分割线-->
-		<div class="clearStore">
-			<img src="img/clearStore.jpg"/>
-			<div class="clearBox">
-				
-				<div class="clearStore-bottom">
-					<a href="">点击进入</a>
-				</div>
-			</div>
-		</div>
-		<!--我是分割线-->
-		<!--单品 明星系列-->
-		<div class="star">
-			<div class="photoBox">
-				<img src="img/star.jpg"/>
-			</div>
-			<div class="starTit">
-				<p class="text">
-					BUMA全新定义街头潮流<br>「街头归你」势不可挡
-				</p>
-				<div class="starMore">
-					<a href="/collections/static/ecom-detail-streets">
-						了解更多
+					<a href="">
+					<img src="img/shoes.png"/>
 					</a>
-				</div>
-			</div>
-		</div>
-		<!-- 底部导航部分 -->
+					<div class="list-name">
+						Pulse IGNITE XT Swan 女子训练鞋
+					</div>
+					<div>
+						<span>￥739.00</span>
+					</div>
+				</li>
+		<!--goods2-->
+				<li>
+					
+					<a href="">
+					<img src="img/Hshoes.png"/>
+					</a>
+					<div class="list-name">
+						BUMA IGNITE Limitless <br/>
+						Extreme Hi-Tech 男女同款跑步鞋
+					</div>
+					<div>
+						<span>￥1169.00</span>
+					</div>
+				</li>
+		<!--goods3-->
+				<li>
+					
+					<a href="">
+					<img src="img/3.png"/>
+					</a>
+					<div class="list-name">
+						Explosive Jacket 女子 梭织外套
+					</div>
+					<div>
+						<span>￥749.00</span>
+					</div>
+				</li>
 
+				
+
+			</ul>
+		</div>
+		
+<!-- 底部导航部分 -->
 <div class="footer" id="footer">
 	<div class="email">
 		<div class="email-box">
@@ -1303,31 +1159,146 @@
 				</div>
 		</div>
 </div>
-		
-	<!--<script>
-		window.onscroll = function () { 
-			
-			 var t = document.documentElement.scrollTop || document.body.scrollTop;
-			 if (t > 52) { 
-			 		$(".header").addClass("header-fix");
-			 		$(".header-fix .header-nav").css({"position":"fixed","top":"0","background":"#fff","z-index":999}); 
-			 	
-			 	
-			 	
-			 }else{
-			 		$(".header").removeClass("header-fix");
-			 		//$(".header-nav").css({"z-index":50}); 
-			 }
-			}
-	</script>-->
+
+	
 	<script>
-		scrollAuto();
-	</script>
-	<script type="text/javascript">
-		auto();
+		var wrap=document.getElementById("wrap");
+		var Img=wrap.getElementsByTagName("img")[0];
+		var list=document.getElementById("list");
+		var oli=list.getElementsByTagName("li");
+		var prev=document.getElementsByClassName("prev");
+		var next=document.getElementsByClassName("next");
+		var Big=document.getElementsByClassName("bigPic")[0];
+		var box=document.getElementsByClassName("box")[0];
+		var oPop=getClass("pop")[0];
+		var oBigPic=Big.getElementsByTagName("img")[0];
+		var w = 452,h = 452;
+		var oW = 226,oH = 226;
+		var bigW = 904,bigH = 904;
+		function getClass(str){
+			return document.getElementsByClassName(str);
+		}
+		//鼠标移到小图上大图随之改变
+		for(var i=0;i<oli.length;i++){
+			oli[i].index=i;
+			oli[i].onclick=function(){
+				var o=this.index;
+				Img.src="img/"+o+".jpg";
+				oBigPic.src="img/"+o+".jpg";
+		}
+	}
+		//点击向左
+		prev.onclick=function(){
+			document.getElementById("list").style.left="-77px"
+		}
+		next.onclick=function(){
+			document.getElementById("list").style.left="0px"
+		}
+		
+		box.onmouseover=function(){
+			Big.style.display="block";
+			oPop.style.display="block";
+		}
+		box.onmouseout=function(){
+			Big.style.display="none";
+			oPop.style.display="none";
+		}
+		
+		
+		box.onmousemove=function(e){
+				var evt=e||event;
+				if(evt.clientX-box.offsetLeft<oW/2){
+					l=0;
+				}else if(evt.clientX-box.offsetLeft>(w-oW/2)){
+					l=w-oW;
+				}else{
+					l=evt.clientX-box.offsetLeft-oW/2;
+				}
+				
+				if(evt.pageY-box.offsetTop<oH/2){
+					t=0;
+				}else if(evt.clientY-box.offsetTop>(h-oH/2)){
+					t=h-oH;
+				}else{
+					t=evt.clientY-box.offsetTop-oH/2;
+				}
+				
+				oPop.style.left=l+"px";
+				oPop.style.top=t+"px";
+				
+				oBigPic.style.left=(-1)*l*bigW/w+"px";
+				oBigPic.style.top=(-1)*t*bigH/h+"px";
+			}
+		var str='12345';
+		var s=str.replace('23','');
+		var minus=document.getElementById("minus");
+		var plus=document.getElementById("plus");
+		var otxt=document.getElementById("txt");
+		
+		plus.onclick=function(){
+			var n=parseInt(otxt.value);
+			if(n<199&&n>0){
+				otxt.value=n+1;
+				minus.disabled=false;
+				minus.style.cursor="pointer";
+				if(n==199){
+					plus.disabled=true;
+					plus.style.cursor="not-allowed";
+				}
+			}else{
+				plus.disabled=true;
+				plus.style.cursor="not-allowed";
+			}
+		}
+		minus.onclick=function(){
+			var n=parseInt(otxt.value);
+			if(n>1&&n<200){
+				otxt.value=n-1;
+				plus.disabled=false;
+				plus.style.cursor="pointer";
+				
+				if(n==1){
+//					minus.disabled=true;
+					minus.style.cursor="not-allowed";
+				}
+			}else{
+				minus.disabled=true;
+				minus.style.cursor="not-allowed";
+			}
+			
+		}
+		
+		otxt.onkeyup=function(){
+			var n=otxt.value;
+			setTimeout(function(){
+				m=n.replace(/\D|0/g,"")?n.replace(/\D/g,""):1;
+				otxt.value=m<200?m:199;
+				if(n==1){
+					minus.disabled=true;
+					minus.style.cursor="not-allowed";
+				}else{
+					minus.disabled=false;
+					minus.style.cursor="pointer";
+				}
+				if(n==199){
+					plus.disabled=true;
+					plus.style.cursor="not-allowed";
+				}else{
+					plus.disabled=false;
+					plus.style.cursor="pointer";
+				}
+			},500)
+			
+			
+			
+		}
+		
+	
 	</script>
 
 	
 	</body>
 </html>
+
+
 

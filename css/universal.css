@@ -178,3 +178,47 @@ p {
   margin: 0 0 5px;
 }
 .small-atext:hover{color:red;}
+.footer h6 {
+color: #999;
+font-size: 12px;
+margin-top: 10px;
+}
+.footer a{
+	color:black;
+}
+.footer a:hover{
+	color:red;
+	text-decoration: none;
+}
+i{
+	font-style:normal;
+}
+	@font-face {font-family: 'iconfont';
+    src: url('../iconfont/iconfont.eot'); /* IE9*/
+    src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:22px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    
+    }
+    
+.btn i {
+        display: block;
+        font-style: normal;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        border-top: 4px solid white;
+        border-right: 4px solid white;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid transparent; }
+.btn:hover{background:#000;text-decoration: none;}

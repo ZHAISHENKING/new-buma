@@ -1,8 +1,8 @@
  function auto(){
- 	 // 获取第一个图片 节点对象 
-    var firstImg = $('#ul li').first().clone(); 
-    // 放在 ul 的最后 
-    $('#ul').append(firstImg).width($('#ul li').length*$('#ul img').width()); 
+// 	 // 获取第一个图片 节点对象 
+//  var firstImg = $('#ul li').first().clone(); 
+//  // 放在 ul 的最后 
+//  $('#ul').append(firstImg).width($('#ul li').length*$('#ul img').width()); 
   
     var i = 0; 
   
