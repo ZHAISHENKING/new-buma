@@ -1,0 +1,40 @@
+{
+		  "ListContents" : [
+							{
+							  "GroupCount" : "2",
+							  "GroupInfo" : [
+												{
+												  "BrandID" : "1",
+												  "MainBrandName" : "Pulse IGNITE XT Swan 女子训练鞋",
+								
+												  "imgURL" : "img/shoes.png"
+												}
+								],
+							  "PinYin" : "￥739.00"
+							},
+							{
+							  "GroupCount" : "2",
+							  "GroupInfo" : [
+											{
+											  "BrandID" : "58",
+											  "MainBrandName" : "BUMA IGNITE Limitless Extreme Hi-Tech 男女同款跑步鞋",
+											  "imgURL" : "img/Hshoes.png"
+											}
+											],
+							  "PinYin" : "￥1169.00"
+							},
+					    {
+					      "GroupCount" : "4",
+					      "GroupInfo" : [
+					        {
+					          "BrandID" : "116",
+					          "MainBrandName" : "Explosive Jacket 女子 梭织外套",
+					          "imgURL" : "img/3.png"
+					        }
+					        ],
+					      "PinYin" : "￥749.00"   
+		 		 
+		 
+						}
+						]
+}

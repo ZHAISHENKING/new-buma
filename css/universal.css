@@ -221,4 +221,4 @@ i{
         border-right: 4px solid white;
         border-bottom: 4px solid transparent;
         border-left: 4px solid transparent; }
-.btn:hover{background:#000;text-decoration: none;}
+.btn:hover{background:#000;text-decoration: none;cursor:pointer;}

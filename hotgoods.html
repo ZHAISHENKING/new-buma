@@ -16,7 +16,7 @@
 			<div class="header-zhuce">
 				<ul class="buma-menu">
 					<li class="menu-1"><a href="###">订阅电子邮件</a></li>
-					<li><a href="###">品牌动态</a></li>
+					<li><a href="hotgoods.html">品牌动态</a></li>
 					<li><a href="###">帮助中心</a></li>
 					<li><a href="denglu.html">登录</a></li>
 					<li><a href="login.html">注册</a></li>
@@ -27,7 +27,7 @@
 				<div class="navtion-container">
 					<ul class="menu-left">
 						<div class="menu-first">
-							<a href="/" class="homes-icon homes"></a>
+							<a href="buma.html" class="homes-icon homes"></a>
 						</div>
 						<li class="menu-list">
 							<a href="#" class="small-a">男子</a>
@@ -772,227 +772,30 @@
 			</div>
 		<div class="hr-1"></div>
 					
-				
+	</div>		
 	<!--商品列表-->
-	<div class="listbox">
-			<ul>
-				
+		<div class="listbox">
+			<ul class="ul1"></ul>
+			<script type="text/javascript">
+					$.get("getGoodsList.php",
+						function(data){
+							var Data=eval(data);
+							var liObj="";
+							for(var i=1;i<Data.length;i++){
+								liObj+="<li class='listCard'><span class='btn bg-black'>新款</span><a href='放大镜.html'><img src='"+Data[i].goodsDesc+"'></a>";
+								liObj+="<div class='list-name'>"+Data[i].goodsName+"</div><div><span >￥"+Data[i].goodsPrice+".00</span></div>";
+								liObj+="<span class='addCard' style='background:red;color:#fff;cursor:pointer;'>+</span></li>"
+							}
+							$(".ul1").append(liObj);
+							
+							
+							
+						}
+					)
 			
-		<!--goods1-->
-				<li>
-					<span class="btn bg-black">新款</span>
-					<a href="放大镜.html">
-					<img src="img/shoes.png"/>
-					</a>
-					<div class="list-name">
-						Pulse IGNITE XT Swan 女子训练鞋
-					</div>
-					<div>
-						<span>￥739.00</span>
-					</div>
-				</li>
-		<!--goods2-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/Hshoes.png"/>
-					</a>
-					<div class="list-name">
-						BUMA IGNITE Limitless <br/>
-						Extreme Hi-Tech 男女同款跑步鞋
-					</div>
-					<div>
-						<span>￥1169.00</span>
-					</div>
-				</li>
-		<!--goods3-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/3.png"/>
-					</a>
-					<div class="list-name">
-						Explosive Jacket 女子 梭织外套
-					</div>
-					<div>
-						<span>￥749.00</span>
-					</div>
-				</li>
-		<!--goods4-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/4.png"/>
-					</a>
-					<div class="list-name">
-						Evo Core FZ Hoody 男子 针织外套
-					</div>
-					<div>
-						<span>￥549.00</span>
-					</div>
-				</li>
-		<!--goods5-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/6.png"/>
-					</a>
-					<div class="list-name">
-						Evo Core Sweat Pants 男子 针织长裤
-					</div>
-					<div>
-						<span>￥449.00</span>
-					</div>
-				</li>
-		<!--goods6-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/7.png"/>
-					</a>
-					<div class="list-name">
-						CLASH 女子紧身裤 
-					</div>
-					<div>
-						<span>￥499.00</span>
-					</div>
-				</li>
-		<!--goods7-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/8.png"/>
-					</a>
-					<div class="list-name">
-						Prime Street Swan 女子双肩包
-					</div>
-					<div>
-						<span>￥299.00</span>
-					</div>
-				</li>
-		<!--goods8-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/9.png"/>
-					</a>
-					<div class="list-name">
-						BUMA EVOLUTION SB 男女款 帽子
-					</div>
-					<div>
-						<span>￥199.00</span>
-					</div>
-				</li>
-				<!--goods1-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/shoes.png"/>
-					</a>
-					<div class="list-name">
-						Pulse IGNITE XT Swan 女子训练鞋
-					</div>
-					<div>
-						<span>￥739.00</span>
-					</div>
-				</li>
-		<!--goods2-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/Hshoes.png"/>
-					</a>
-					<div class="list-name">
-						BUMA IGNITE Limitless <br/>
-						Extreme Hi-Tech 男女同款跑步鞋
-					</div>
-					<div>
-						<span>￥1169.00</span>
-					</div>
-				</li>
-		<!--goods3-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/3.png"/>
-					</a>
-					<div class="list-name">
-						Explosive Jacket 女子 梭织外套
-					</div>
-					<div>
-						<span>￥749.00</span>
-					</div>
-				</li>
-		<!--goods4-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/4.png"/>
-					</a>
-					<div class="list-name">
-						Evo Core FZ Hoody 男子 针织外套
-					</div>
-					<div>
-						<span>￥549.00</span>
-					</div>
-				</li>
-		<!--goods5-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/6.png"/>
-					</a>
-					<div class="list-name">
-						Evo Core Sweat Pants 男子 针织长裤
-					</div>
-					<div>
-						<span>￥449.00</span>
-					</div>
-				</li>
-		<!--goods6-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/7.png"/>
-					</a>
-					<div class="list-name">
-						CLASH 女子紧身裤 
-					</div>
-					<div>
-						<span>￥499.00</span>
-					</div>
-				</li>
-		<!--goods7-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/8.png"/>
-					</a>
-					<div class="list-name">
-						Prime Street Swan 女子双肩包
-					</div>
-					<div>
-						<span>￥299.00</span>
-					</div>
-				</li>
-		<!--goods8-->
-				<li>
-					<span class="btn bg-black">折扣</span>
-					<a href="">
-					<img src="img/9.png"/>
-					</a>
-					<div class="list-name">
-						BUMA EVOLUTION SB 男女款 帽子
-					</div>
-					<div>
-						<span>￥199.00</span>
-					</div>
-				</li>
 				
-
-			</ul>
-		</div>	
-		
+			</script>
+		</div>
 		<div class="hot-box">
 			<p>
 				女子精选<span><i>203</i>个搜索结果</span>
@@ -1001,9 +804,9 @@
 			<ul class="oul">
 				<li>All<span>+</span></li>
 				<li>鞋<span>+</span></li>
-				<li>服装<span>+</span></li>
-				<li>配饰<span>+</span></li>
-				<li>精选<span>+</span></li>
+				<li>衣服<span>+</span></li>
+				<li>帽子<span>+</span></li>
+				<li>背包<span>+</span></li>
 			</ul>
 			<span id="love">
 				猜你喜欢
@@ -1059,10 +862,14 @@
 		</div>
 		
 	</div>
-		<!--hot产品end-->
 		
-		<!-- 底部导航部分 -->
 
+
+
+
+<!--hot产品end-->
+		
+<!-- 底部导航部分 -->
 <div class="footer" id="footer">
 	<div class="email">
 		<div class="email-box">
@@ -1228,12 +1035,8 @@
 					</a>
 				</div>
 		</div>
-</div>
-
-	<script>
-		scrollAuto();
-	</script>
 	
+	</div>
 
 	
 	</body>

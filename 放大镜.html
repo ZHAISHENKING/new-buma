@@ -58,7 +58,7 @@
 				background:rgba(0,0,0,.4);
 				display:none;
 				}
-			.size span{display:inline-block;width:30px;height:30px;background:lightgray;color:#000;margin-right:10px;line-height:30px;text-align: center;}	
+			.size span{cursor:pointer;display:inline-block;width:30px;height:30px;background:lightgray;color:#000;margin-right:10px;line-height:30px;text-align: center;}	
 		.wrap-right{position:absolute; top:150px;right:25%;width:30%;overflow:hidden;}
 			#txt{text-align:center;
 				width:40px;height:50px;
@@ -67,7 +67,8 @@
 				font-weight:bold;}
 			#plus{width:30px;height:25px;}
 			#minus{width:30px;height:25px;}
-			.btn {text-align: center;
+			.btn {cursor:pointer;
+				text-align: center;
                        margin-top:20px;
                         display:block;
                         border-radius: 0;
@@ -117,6 +118,7 @@
         line-height:50px;
         
     }
+.size .active{background:red;}
 		</style>
 		<link rel="stylesheet" href="css/universal.css" />
 		<!--<link rel="stylesheet" type="text/css" href="css/hotgoods.css"/>-->
@@ -141,7 +143,7 @@
 				<div class="navtion-container">
 					<ul class="menu-left">
 						<div class="menu-first">
-							<a href="/" class="homes-icon homes"></a>
+							<a href="buma.html" class="homes-icon homes"></a>
 						</div>
 						<li class="menu-list">
 							<a href="#" class="small-a">男子</a>
@@ -903,14 +905,14 @@
 				<span  class="next">&gt;</span>
 			
 				<div class="foot">
-					<ul id="list">
+					<!--<ul id="list">
 						<li class="active"><img src="img/0.jpg"/></li>
 						<li><img src="img/1.jpg"/></li>
 						<li><img src="img/2.jpg"/></li>
 						<li><img src="img/3.jpg"/></li>
 						<li><img src="img/4.jpg"/></li>
 						<li><img src="img/5.jpg"/></li>
-					</ul>
+					</ul>-->
 				</div>
 				
 				
@@ -934,14 +936,14 @@
 		<input type="button" value="-" id="minus"disabled=true/>
 		<input type="text" value="1" id="txt"/>
 		<input type="button" value="+" id="plus"/>
-		<span class="btn">加入购物车</span>
+		<span class="btn" id="btn-add">加入购物车</span>
 	</div>
 	<div id="sbox">
 		<span id="love">
 				猜你喜欢
 			</span>
 	</div>
-			
+	
 			<div class="listbox">
 			<ul>
 				
@@ -949,9 +951,9 @@
 		<!--goods1-->
 				<li>
 					
-					<a href="">
+					
 					<img src="img/shoes.png"/>
-					</a>
+					
 					<div class="list-name">
 						Pulse IGNITE XT Swan 女子训练鞋
 					</div>
@@ -962,9 +964,9 @@
 		<!--goods2-->
 				<li>
 					
-					<a href="">
+					
 					<img src="img/Hshoes.png"/>
-					</a>
+					
 					<div class="list-name">
 						BUMA IGNITE Limitless <br/>
 						Extreme Hi-Tech 男女同款跑步鞋
@@ -976,9 +978,9 @@
 		<!--goods3-->
 				<li>
 					
-					<a href="">
+					
 					<img src="img/3.png"/>
-					</a>
+					
 					<div class="list-name">
 						Explosive Jacket 女子 梭织外套
 					</div>
@@ -992,6 +994,44 @@
 			</ul>
 		</div>
 		
+		<script type="text/javascript">
+
+		
+		$(function(){
+			
+			//尺码选择
+			for(var i=0;i<4;i++){
+				let index=i;
+				$(".size span:eq("+i+")").click(function(){
+					for(var j=0;j<4;j++){
+						$(".size span:eq("+j+")").removeClass("active");
+					}
+				$(".size span:eq("+index+")").addClass("active");
+			})
+			}
+			
+			//点击猜你喜欢中图片   信息与左边信息交换
+			for(var k=0;k<3;k++){
+				let biaoji=k;
+				$(".listbox li:eq("+k+")").click(function(){
+				$(".top img").attr("src",''+$(".listbox li:eq("+biaoji+") img").attr("src")+'');
+				$(".bigPic img").attr("src",''+$(".listbox li:eq("+biaoji+") img").attr("src")+'');
+				$(".wrapBox h2").html(''+$(".listbox li:eq("+biaoji+") .list-name").html()+'');
+				$(".wrapBox p").html(''+$(".listbox li:eq("+biaoji+") span").html()+'');
+				//	console.log($(".listbox li:eq("+biaoji+") .list-name").html());
+				})
+			}
+			
+			
+		})
+</script>
+
+		<!--<script type="text/javascript">
+			$()
+		</script>-->
+	
+	
+	
 <!-- 底部导航部分 -->
 <div class="footer" id="footer">
 	<div class="email">

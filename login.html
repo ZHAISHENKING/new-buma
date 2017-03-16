@@ -8,7 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="css/login.css"/>
 		<link rel="stylesheet" type="text/css" href="css/buma.css"/>
 	</head>
-	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="js/banner-auto.js"></script>
 	<script type="text/javascript" src="js/scrollTit.js"></script>
 	<body>
@@ -27,7 +28,7 @@
 				<div class="navtion-container">
 					<ul class="menu-left">
 						<div class="menu-first">
-							<a href="/" class="homes-icon homes"></a>
+							<a href="buma.html" class="homes-icon homes"></a>
 						</div>
 						<li class="menu-list">
 							<a href="#" class="small-a">男子</a>
@@ -779,18 +780,19 @@
 						<div class="group">
 							<div class="select-wrap">
 								<div class="label">
-									<span class="red">*</span>姓名
+									<span class="red">*</span>账号
 								</div>
-								<input  name="realName" type="text" class="s-ipt" placeholder="输入您的姓名">
+								<input  name="realName" type="text" class="s-ipt" id="userName" placeholder="输入您的用户名">
+								<i class="user-winning"></i>
 							</div>
 							
 						</div>
-						<div class="sexBox">
+						<!--<div class="sexBox">
 								<label>姓别</label>
 								<span><input type="radio" name="sex"/><i></i>男</span>
 								<span><input type="radio" name="sex"/><i></i>女</span>
 								 <input type="hidden" id="sex" name="sex" value="0">
-						</div>
+						</div>-->
 					</li>
 					<li>
 						<div class="group">
@@ -798,11 +800,12 @@
 								<div class="label">
 									<span class="red">*</span>手机号码
 								</div>
-								<input  name="realName" type="text" class="s-ipt" placeholder="输入您的姓名">
+								<input  name="realName" type="text" class="s-ipt"  id="phone" placeholder="输入您的姓名">
+								<i class="phone-winning"></i>
 							</div>
 						</div>
 					</li>
-					<li>
+					<!--<li>
 						<div class="group">
 							<div class="select-wrap">
 								<div class="label">
@@ -811,8 +814,8 @@
 								<input  name="realName" type="text" class="s-ipt" placeholder="输入您的姓名">
 							</div>
 						</div>
-					</li>
-					<li>
+					</li>-->
+					<!--<li>
 						<div class="group">
 							<div class="select-wrap">
 								<div class="label">
@@ -821,14 +824,15 @@
 								<input  name="realName" type="text" class="s-ipt" placeholder="输入您的姓名"><a class="getword">获取验证码</a>
 							</div>
 						</div>
-					</li>
+					</li>-->
 					<li>
 						<div class="group">
 							<div class="select-wrap">
 								<div class="label">
 									<span class="red">*</span>密码
 								</div>
-								<input  name="realName" type="text" class="s-ipt1" placeholder="输入您的姓名">
+								<input  name="realName" type="password" class="s-ipt1" id="passWord" placeholder="输入您的姓名">
+								<i class="pass-winning"></i>
 							</div>
 						</div>
 					</li>
@@ -838,7 +842,8 @@
 								<div class="label">
 									<span class="red">*</span>确认密码
 								</div>
-								<input  name="realName" type="text" class="s-ipt1" placeholder="输入您的姓名">
+								<input  name="realName" type="password" class="s-ipt1"  id="db-passWord" placeholder="输入您的姓名">
+								<i class="db-pass-winning"></i>
 							</div>
 						</div>
 					</li>
@@ -848,24 +853,178 @@
 								<div class="label">
 									<span class="red">*</span>邮箱
 								</div>
-								<input  name="realName" type="text" class="s-ipt1" placeholder="输入您的姓名">
+								<input  name="realName" type="text" class="s-ipt1" id="email" placeholder="输入您的姓名">
+								<i class="email-winning"></i>
 							</div>
 						</div>
 					</li>
 					<div class="last">
-						<input type="checkbox"/><label class="email"><i></i>我愿意订阅来自cn.puma.com的邮件</label>
+						<input type="checkbox"/><label class="email"><i></i>我愿意订阅来自cn.puma.com的邮件(可不选)</label>
 					</div>
 					<div class="last">
-						<input type="checkbox"/><label class="email"><i></i>我已阅读并同意PUMA中国官方商城的<a href="/help/item.htm" style="text-decoration: underline;">《使用条款》</a>和<a href="/help/privacy.htm" style="text-decoration: underline;">《隐私政策》。</a></label>
+						<input type="checkbox" class="must-write"/><label class="email"><i></i>我已阅读并同意PUMA中国官方商城的<a href="/help/item.htm" style="text-decoration: underline;">《使用条款》</a>和<a href="/help/privacy.htm" style="text-decoration: underline;">《隐私政策》。</a></label>
 					</div>
-					<a href="/daily_paper" class="btn ">提交<i></i></a>
+					<a  class="btn btn-up">提交<i></i></a>
 				</ul>
 			</div>
 		</div>
 	</div>
 </div>
 
+<script>
 
+	$(function(){
+		
+		let flag1=0;
+		let flag2=0;
+		let flag3=0;
+		let flag4=0;
+		let flag5=0;
+		
+		//用户名验证
+		$("#userName").blur(function(){
+			if($(this).val()){
+				var reg=/^[0-9a-zA-Z]{6,20}$/;
+				var user=$(this).val();
+				if(reg.test(user)==true){
+					$.get("yanzheng.php",
+						{"userName":$("#userName").val()},	
+							function(data){
+								
+								if(data.indexOf("1")>-1){
+									$(".user-winning").html("用户名已存在");
+									$(".user-winning").css("color","#f00");
+								}else{
+									
+									$(".user-winning").html("用户名可用");
+									$(".user-winning").css("color","#0f0");
+									flag1=1;
+								}
+							}
+						)	
+					
+				}else{
+					$(".user-winning").html("用户名包含非法字符，请重新输入");
+					$(".user-winning").css("color","#f00");
+					$(this).val("");
+				}
+				
+			}else{
+				$(".user-winning").html("请输入用户名");	
+				$(".user-winning").css("color","red");
+			}
+		})
+		
+		//手机号验证
+		$("#phone").blur(function(){
+			if($(this).val()==""){
+				$(".phone-winning").html("请输入手机号");	
+				$(".phone-winning").css("color","red");
+			}else{
+				var reg=/^1[0-9]{10}$/;
+				var phone=$(this).val();
+				if(reg.test(phone)==true){
+					$(".phone-winning").html("手机验证通过");
+					$(".phone-winning").css("color","#0f0");
+					flag2=1;
+				}else{
+					$(".phone-winning").html("请再次确认手机号");
+					$(".phone-winning").css("color","#f00");
+				}
+				
+				
+			}
+		})
+		
+		//密码验证
+		$("#passWord").blur(function(){
+			if($(this).val()==""){
+				$(".pass-winning").html("请输入密码");	
+				$(".pass-winning").css("color","red");
+			}else{
+				var reg=/^[0-9a-zA-Z]{6,12}$/;
+				var pass=$(this).val();
+				if(reg.test(pass)==true){
+					$(".pass-winning").html("密码可用");$(".pass-winning").css("color","#0f0")
+					flag3=1;
+				}else{
+					$(".pass-winning").html("密码不可用，需6-12位字母数字结合");$(".pass-winning").css("color","#f00")
+				}
+				
+				
+			}
+		})
+		
+	//密码确认
+		$("#db-passWord").blur(function(){
+			if($(this).val()==""){
+				$(".db-pass-winning").html("请再次输入密码");	
+				$(".db-pass-winning").css("color","red");
+			}else{
+				if($(this).val()!=$("#passWord").val()){
+					$(".db-pass-winning").html("密码不匹配");	
+					$(".db-pass-winning").css("color","red");
+				}else{
+					$(".db-pass-winning").html("匹配通过");
+					$(".db-pass-winning").css("color","#0f0")
+					flag4=1;
+				}
+				
+				
+			}
+		})
+		
+	//邮箱验证
+		$("#email").blur(function(){
+			if($(this).val()==""){
+				$(".email-winning").html("请输入邮箱");	
+				$(".email-winning").css("color","red");
+			}else{
+				
+				$(".email-winning").html("邮箱可用");$(".email-winning").css("color","#0f0")
+				flag5=1;
+				
+			}
+		})
+		
+	//注册结束  提交	
+		$(".btn-up").click(function(){
+			var flag=flag1+flag2+flag3+flag4+flag5;
+			var $isChecked = $(".must-write").is(":checked");
+			if($isChecked==true && flag==5){
+				
+				$.post("zhuce.php",
+						{
+							"userPhone":$("#phone").val(),
+							"userPass":$("#passWord").val(),
+							"userName":$("#userName").val(),
+							"userEmail":$("#email").val()
+						},
+						function(){
+							let divObj="<div style='font-size:16px;font-weight:bold;position:fixed;width:80%;height:50px;margin:25px auto;top:50%;text-align:center;line-height:50px;background:#ccc;z-index:999;left:150px;'>";
+							divObj+="恭喜您，注册成功。5s后跳转至登录页面，也可<a href='denglu.html'>直接跳转</a>"
+							divObj+="</div>"
+							$("body").append(divObj);
+							setTimeout(function(){
+								window.open("denglu.html");
+								//window.close("login.html");
+							},5000)		
+						}
+				)
+			}
+			
+				
+			
+				
+				
+				
+				
+			})
+	})
+		
+		
+	
+</script>
 
 
 
@@ -1082,9 +1241,6 @@
 			 }
 			}
 	</script>-->
-	<script>
-		scrollAuto();
-	</script>
 	
 
 	
